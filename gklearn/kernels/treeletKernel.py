@@ -322,7 +322,7 @@ def get_canonkeys(G, node_label, edge_label, labeled, is_directed):
 			treelet = []
 			for pattern in patterns[str(i) + 'star']:
 				canonlist = [tuple((G.nodes[leaf][node_label], 
-									G.node[leaf][pattern[0]][edge_label])) for leaf in pattern[1:]]
+									G.nodes[leaf][pattern[0]][edge_label])) for leaf in pattern[1:]]
 				canonlist.sort()
 				canonlist = list(chain.from_iterable(canonlist))
 				canonkey_t = tuple(['d' if i == 5 else str(i * 2)] + 
